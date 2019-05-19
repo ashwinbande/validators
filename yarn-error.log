@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add eslint --dev
+
+PATH: 
+  /home/priyanka/WebstormProjects/validators/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.15.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+
+npm manifest: 
+  {
+    "name": "@ashwinbande/validators",
+    "version": "1.0.0",
+    "description": "Different validators for Validating Codes",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ashwinbande/validators.git"
+    },
+    "keywords": [
+      "india",
+      "indian",
+      "validation",
+      "pan",
+      "gstin",
+      "aadhar"
+    ],
+    "author": "ashwin bande",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/ashwinbande/validators/issues"
+    },
+    "homepage": "https://github.com/ashwinbande/validators#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
