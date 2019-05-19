@@ -175,7 +175,7 @@ const isValid = {
 };
 
 
-// module.exports = { gstin };
+module.exports = { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile, pinCode, hsn, sac };
 
 // console.log(isValid.gstin('09aaact2727q1zu'));
 
