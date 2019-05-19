@@ -1,0 +1,27 @@
+{
+  "name": "@ashwinbande/validators",
+  "version": "1.0.0",
+  "description": "Different validators for Validating Codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashwinbande/validators.git"
+  },
+  "keywords": [
+    "india",
+    "indian",
+    "validation",
+    "pan",
+    "gstin",
+    "aadhar"
+  ],
+  "author": "ashwin bande",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashwinbande/validators/issues"
+  },
+  "homepage": "https://github.com/ashwinbande/validators#readme"
+}
