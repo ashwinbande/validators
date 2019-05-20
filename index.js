@@ -3,7 +3,7 @@ const REGX = {
   GSTIN_WO_CHK: /^\d{2}[A-Z]{5}\d{4}[A-Z][A-Z\d][Z]$/,
   GSTIN: /^\d{2}[A-Z]{5}\d{4}[A-Z][A-Z\d][Z][A-Z\d]$/,
   TAN: /^[A-Z]{4}\d{5}[A-Z]$/,
-  AADHAR: /^\d{12}$/,
+  AADHAR: /^[2-9]\d{11}$/,
   IMEI: /^\d{15}$/,
   CARD: /^\d{14,16}$/,
   IFSC: /^[A-Z]{4}[A-Z0-9]{7}$/,
@@ -121,7 +121,13 @@ function invArray(arr) {
 const generate = number => inv[invArray(number).reduce((a, c, i) => d[a][p[(i + 1) % 8][c]], 0)];
 
 // validates checksum
-const aadhar = number => !invArray(number).reduce((a, c, i) => d[a][p[i % 8][c]], 0);
+const aadhar = (number) => {
+  console.log('test', REGX.AADHAR.test(number.toString()));
+  if (REGX.AADHAR.test(number.toString())) {
+    return !invArray(number).reduce((a, c, i) => d[a][p[i % 8][c]], 0);
+  }
+  return false;
+};
 
 aadhar.getValidDigit = generate;
 
@@ -180,8 +186,9 @@ module.exports = { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile,
 // console.log(isValid.gstin('09aaact2727q1zu'));
 
 // console.log(isValid.tan('MUMT07207E'));
+
 // console.log(isValid.aadhar('303892705014'));
-// console.log(isValid.aadhar('472964479755'));
+console.log(isValid.aadhar('472964479755'));
 
 // console.log(isValid.aadhar.getValidDigit('30389270501'));
 // console.log(isValid.aadhar.getValidDigit('47296447975'));
@@ -204,4 +211,4 @@ module.exports = { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile,
 
 // console.log(isValid.hsn('445206'));
 
-console.log(isValid.sac('44520690'));
+// console.log(isValid.sac('44520690'));
