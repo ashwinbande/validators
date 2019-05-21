@@ -36,7 +36,6 @@ const luhnCheck = value => value.split('').reverse().map((x, i) => (i % 2 ? +x *
 // GSTIN
 
 const getValidDigit = (gstino) => {
-  // if (!REGX.GSTIN_WO_CHK.test(gstino.toUpperCase())) throw Error('Invalid Format of GSTIN');
   const gstNo = gstino.toUpperCase().substring(0, 14).split('');
   const ref = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const sum = gstNo.map((x, i) => ref.indexOf(x) * ((i % 2) + 1))
@@ -122,7 +121,6 @@ const generate = number => inv[invArray(number).reduce((a, c, i) => d[a][p[(i + 
 
 // validates checksum
 const aadhar = (number) => {
-  console.log('test', REGX.AADHAR.test(number.toString()));
   if (REGX.AADHAR.test(number.toString())) {
     return !invArray(number).reduce((a, c, i) => d[a][p[i % 8][c]], 0);
   }
@@ -188,7 +186,7 @@ module.exports = { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile,
 // console.log(isValid.tan('MUMT07207E'));
 
 // console.log(isValid.aadhar('303892705014'));
-console.log(isValid.aadhar('472964479755'));
+// console.log(isValid.aadhar('472964479755'));
 
 // console.log(isValid.aadhar.getValidDigit('30389270501'));
 // console.log(isValid.aadhar.getValidDigit('47296447975'));
