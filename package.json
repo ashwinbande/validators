@@ -14,12 +14,24 @@
   "keywords": [
     "india",
     "indian",
-    "validation",
-    "pan",
     "gstin",
-    "aadhar"
+    "pan",
+    "tan",
+    "aadhar",
+    "imei",
+    "card",
+    "ifsc",
+    "esic",
+    "uan",
+    "mobile",
+    "pinCode",
+    "hsn",
+    "sac",
+    "validation",
+    "checksum",
+    "algorithm"
   ],
-  "author": "ashwin bande",
+  "author": "Ashwin Bande",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ashwinbande/validators/issues"

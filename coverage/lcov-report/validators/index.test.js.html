@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>112/112</span>
+        <span class='fraction'>169/169</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>61/61</span>
+        <span class='fraction'>92/92</span>
       </div>
     </div>
   </div>
@@ -125,7 +125,48 @@
 80
 81
 82
-83</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -195,6 +236,47 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -208,7 +290,7 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const assert = require('assert');
-const { gstin, pan, tan, aadhar, imei, card, ifsc, esic } = require('./index');
+const { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile, pinCode, hsn, sac } = require('./index');
 &nbsp;
 describe('gstin', () =&gt; {
   it('It should not accept string more than 15 chars', () =&gt; assert.equal(gstin('09AAACT2727Q1ZUU'), false));
@@ -289,13 +371,54 @@ describe('esic', () =&gt; {
   it('It should not accept string less than 17 chars', () =&gt; assert.equal(esic('3100123456000001'), false));
   it('It should not accept syntax other than "#################"', () =&gt; assert.equal(esic('31001234AD0000001'), false));
   it('It should always accept valid esic number', () =&gt; assert.equal(esic('31001234560000001'), true));
+});
+&nbsp;
+describe('uan', () =&gt; {
+  it('It should not accept string more than 12 chars', () =&gt; assert.equal(uan('1112223334445'), false));
+  it('It should not accept string less than 12 chars', () =&gt; assert.equal(uan('11122233344'), false));
+  it('It should not accept syntax other than "############"', () =&gt; assert.equal(uan('11122233344A'), false));
+  it('It should always accept valid uan number', () =&gt; assert.equal(uan('111222333444'), true));
+});
+&nbsp;
+describe('mobile', () =&gt; {
+  it('It should not accept string more than 10 chars', () =&gt; assert.equal(mobile('94562456789'), false));
+  it('It should not accept string less than 10 chars', () =&gt; assert.equal(mobile('945624567'), false));
+  it('It should not accept syntax other than "##########"', () =&gt; assert.equal(mobile('945624567A9'), false));
+  it('It should always accept valid mobile number', () =&gt; assert.equal(mobile('9456245678'), true));
+});
+&nbsp;
+describe('pincode', () =&gt; {
+  it('It should not accept string more than 6 chars', () =&gt; assert.equal(pinCode('4452066'), false));
+  it('It should not accept string less than 6 chars', () =&gt; assert.equal(pinCode('44520'), false));
+  it('It should not accept syntax other than "######"', () =&gt; assert.equal(pinCode('445a6'), false));
+  it('It should always accept valid pincode number', () =&gt; assert.equal(pinCode('445206'), true));
+});
+&nbsp;
+describe('hsn', () =&gt; {
+  it('It should not accept string more than 8 chars and even', () =&gt; assert.equal(hsn('445206678'), false));
+  it('It should not accept string of 1 chars', () =&gt; assert.equal(hsn('4'), false));
+  it('It should not accept string of 3 chars', () =&gt; assert.equal(hsn('444'), false));
+  it('It should not accept string of 5 chars', () =&gt; assert.equal(hsn('44455'), false));
+  it('It should not accept string of 7 chars', () =&gt; assert.equal(hsn('4445533'), false));
+  it('It should not accept syntax other than "##(##)(##)(##)"', () =&gt; assert.equal(hsn('445a6'), false));
+  it('It should always accept valid 2 digit hsn code', () =&gt; assert.equal(hsn('44'), true));
+  it('It should always accept valid 4 digit hsn code', () =&gt; assert.equal(hsn('4455'), true));
+  it('It should always accept valid 6 digit hsn code', () =&gt; assert.equal(hsn('445566'), true));
+  it('It should always accept valid 8 digit hsn code', () =&gt; assert.equal(hsn('44556634'), true));
+});
+&nbsp;
+describe('sac', () =&gt; {
+  it('It should not accept string more than 8 chars', () =&gt; assert.equal(sac('445206678'), false));
+  it('It should not accept string less than 8 chars', () =&gt; assert.equal(sac('44520'), false));
+  it('It should not accept syntax other than "########"', () =&gt; assert.equal(sac('56445a66'), false));
+  it('It should always accept valid sac code', () =&gt; assert.equal(sac('44529906'), true));
 });</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 21 2019 20:38:07 GMT+0530 (India Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 21 2019 22:31:53 GMT+0530 (India Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { gstin, pan, tan, aadhar, imei, card, ifsc, esic } = require('./index');
+const { gstin, pan, tan, aadhar, imei, card, ifsc, esic, uan, mobile, pinCode, hsn, sac } = require('./index');
 
 describe('gstin', () => {
   it('It should not accept string more than 15 chars', () => assert.equal(gstin('09AAACT2727Q1ZUU'), false));
@@ -80,4 +80,45 @@ describe('esic', () => {
   it('It should not accept string less than 17 chars', () => assert.equal(esic('3100123456000001'), false));
   it('It should not accept syntax other than "#################"', () => assert.equal(esic('31001234AD0000001'), false));
   it('It should always accept valid esic number', () => assert.equal(esic('31001234560000001'), true));
+});
+
+describe('uan', () => {
+  it('It should not accept string more than 12 chars', () => assert.equal(uan('1112223334445'), false));
+  it('It should not accept string less than 12 chars', () => assert.equal(uan('11122233344'), false));
+  it('It should not accept syntax other than "############"', () => assert.equal(uan('11122233344A'), false));
+  it('It should always accept valid uan number', () => assert.equal(uan('111222333444'), true));
+});
+
+describe('mobile', () => {
+  it('It should not accept string more than 10 chars', () => assert.equal(mobile('94562456789'), false));
+  it('It should not accept string less than 10 chars', () => assert.equal(mobile('945624567'), false));
+  it('It should not accept syntax other than "##########"', () => assert.equal(mobile('945624567A9'), false));
+  it('It should always accept valid mobile number', () => assert.equal(mobile('9456245678'), true));
+});
+
+describe('pincode', () => {
+  it('It should not accept string more than 6 chars', () => assert.equal(pinCode('4452066'), false));
+  it('It should not accept string less than 6 chars', () => assert.equal(pinCode('44520'), false));
+  it('It should not accept syntax other than "######"', () => assert.equal(pinCode('445a6'), false));
+  it('It should always accept valid pincode number', () => assert.equal(pinCode('445206'), true));
+});
+
+describe('hsn', () => {
+  it('It should not accept string more than 8 chars and even', () => assert.equal(hsn('445206678'), false));
+  it('It should not accept string of 1 chars', () => assert.equal(hsn('4'), false));
+  it('It should not accept string of 3 chars', () => assert.equal(hsn('444'), false));
+  it('It should not accept string of 5 chars', () => assert.equal(hsn('44455'), false));
+  it('It should not accept string of 7 chars', () => assert.equal(hsn('4445533'), false));
+  it('It should not accept syntax other than "##(##)(##)(##)"', () => assert.equal(hsn('445a6'), false));
+  it('It should always accept valid 2 digit hsn code', () => assert.equal(hsn('44'), true));
+  it('It should always accept valid 4 digit hsn code', () => assert.equal(hsn('4455'), true));
+  it('It should always accept valid 6 digit hsn code', () => assert.equal(hsn('445566'), true));
+  it('It should always accept valid 8 digit hsn code', () => assert.equal(hsn('44556634'), true));
+});
+
+describe('sac', () => {
+  it('It should not accept string more than 8 chars', () => assert.equal(sac('445206678'), false));
+  it('It should not accept string less than 8 chars', () => assert.equal(sac('44520'), false));
+  it('It should not accept syntax other than "########"', () => assert.equal(sac('56445a66'), false));
+  it('It should always accept valid sac code', () => assert.equal(sac('44529906'), true));
 });
