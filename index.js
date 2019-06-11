@@ -4,7 +4,7 @@
     // eslint-disable-next-line no-undef
     : typeof define === 'function' && define.amd ? define(factory)
     // eslint-disable-next-line no-param-reassign,no-restricted-globals
-      : (global = global || self, global.myBundle = factory());
+      : (global = global || self, global.isValid = factory());
 }(this, () => {
   const REGX = {
     PAN: /^[A-Z]{5}\d{4}[A-Z]$/,
