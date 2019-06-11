@@ -26,7 +26,7 @@ In your .js file add following code
 
 
 ### CDN
-Add ```<script src="https://cdn.jsdelivr.net/npm/@ashwinbande/validators/index.min.js"></script>``` at beginning of html file.
+Add ```<script src="https://cdn.jsdelivr.net/npm/@ashwinbande/validators@1/index.min.js"></script>``` at beginning of html file.
 then ```isValid``` will be available globally.
 
 
