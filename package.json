@@ -1,6 +1,6 @@
 {
   "name": "@ashwinbande/validators",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Different validators for Validating Codes",
   "main": "index.js",
   "scripts": {
