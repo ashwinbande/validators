@@ -1,9 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.myBundle = factory());
-}(this, function () { 'use strict';
-
+  // eslint-disable-next-line no-nested-ternary,no-unused-expressions
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory()
+    // eslint-disable-next-line no-undef
+    : typeof define === 'function' && define.amd ? define(factory)
+    // eslint-disable-next-line no-param-reassign,no-restricted-globals
+      : (global = global || self, global.myBundle = factory());
+}(this, () => {
   const REGX = {
     PAN: /^[A-Z]{5}\d{4}[A-Z]$/,
     GSTIN_WO_CHK: /^\d{2}[A-Z]{5}\d{4}[A-Z][A-Z\d][Z]$/,
@@ -131,5 +133,4 @@
   };
 
   return isValid;
-
 }));
